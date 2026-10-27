@@ -15,8 +15,10 @@ class ProdukController extends Controller
 
     public function show($id) 
     {
+        //$produk = $id;
         abort_unless($id <= 2, 404);
         return view('produk.show', ['id' => $id]);
+        //return view('produk.show', compact('produk'));
     }
 
     public function store(Request $request)
@@ -28,3 +30,9 @@ class ProdukController extends Controller
         return redirect()->route('produk.index')->with('status', 'Tersimpan');
     }
 }
+
+    /*public function index()
+    {
+        return view('produk.index');
+    }
+}*/
